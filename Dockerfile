@@ -36,4 +36,4 @@ COPY knexfile.js .
 
 EXPOSE 3000
 
-CMD [ "npm knex migrate:latest &&","dumb-init", "node", "dist/index.js" ]
+CMD [ "npm knex migrate:latest && dumb-init node index.js"]
