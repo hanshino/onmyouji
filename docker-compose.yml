@@ -1,0 +1,23 @@
+version: '3.7'
+
+services:
+  app:
+    build:
+      context: .
+    networks:
+      - traefik
+    volumes:
+      - storage:/usr/src/app/storage
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.onmyouji-secure.rule=Host(`onmyouji.hanshino.dev`)"
+      - "traefik.http.routers.onmyouji-secure.entrypoints=websecure"
+      - "traefik.http.routers.onmyouji-secure.tls=true"
+      - "traefik.http.routers.onmyouji-secure.tls.certresolver=leresolver"
+      - "traefik.docker.network=traefik"
+
+networks:
+  traefik:
+    external: true
+    name: traefik
+  bot_network:
