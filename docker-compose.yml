@@ -7,7 +7,7 @@ services:
     networks:
       - traefik
     volumes:
-      - storage:/usr/src/app/storage
+      - ./storage:/usr/src/app/storage
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.onmyouji-secure.rule=Host(`onmyouji.hanshino.dev`)"
