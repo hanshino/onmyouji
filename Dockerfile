@@ -36,4 +36,4 @@ COPY knexfile.js .
 
 EXPOSE 3000
 
-CMD [ "yarn knex migrate:latest && dumb-init node index.js"]
+CMD [ "dumb-init node index.js"]
