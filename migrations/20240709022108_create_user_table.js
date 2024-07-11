@@ -3,11 +3,11 @@
  * @returns { Promise<void> }
  */
 exports.up = function (knex) {
-  return knex.schema.createTable("user", (table) => {
+  return knex.schema.createTable("users", (table) => {
     table.increments("id").primary();
     table.string("line_id").notNullable().unique();
-    table.string("display_name").notNullable();
-    table.string("picture_url").notNullable();
+    table.string("display_name");
+    table.string("picture_url");
     table.string("status_message");
     table.timestamps(true, true);
 
@@ -20,5 +20,5 @@ exports.up = function (knex) {
  * @returns { Promise<void> }
  */
 exports.down = function (knex) {
-  return knex.schema.dropTable("user");
+  return knex.schema.dropTable("users");
 };

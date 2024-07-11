@@ -6,7 +6,7 @@ const path = require("path");
 module.exports = {
   client: "better-sqlite3",
   connection: {
-    filename: path.resolve(process.cwd(), "data.sqlite"),
+    filename: path.resolve(process.cwd(), "storage/data.sqlite"),
   },
   useNullAsDefault: true,
 };
