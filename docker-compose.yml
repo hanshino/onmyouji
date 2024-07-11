@@ -15,7 +15,7 @@ services:
       - "traefik.http.routers.onmyouji-secure.tls=true"
       - "traefik.http.routers.onmyouji-secure.tls.certresolver=leresolver"
       - "traefik.docker.network=traefik"
-    command: yarn knex migrate:latest && yarn start
+    command: yarn start
 
 networks:
   traefik:
